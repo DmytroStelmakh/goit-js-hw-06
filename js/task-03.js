@@ -13,12 +13,15 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('.gallery');
+const galleryItems = document.querySelector('.gallery');
 
 const createMarkup = images
-  .map(obj => `<li><img src=${obj.url} alt='${obj.alt}'></li>`)
+  .map(
+    obj =>
+      `<li class='galleryItem'><img class='galleryImage' src=${obj.url} alt='${obj.alt}'></li>`,
+  )
   .join('');
 
-galleryList.insertAdjacentHTML('afterbegin', createMarkup);
+galleryItems.insertAdjacentHTML('afterbegin', createMarkup);
 
-console.log(galleryList);
+console.log(galleryItems);
